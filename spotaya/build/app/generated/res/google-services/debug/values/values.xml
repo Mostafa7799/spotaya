@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">957050326572-o3786dq7o2bb9cb5lmh675m3do6hj2j4.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">957050326572</string>
+    <string name="google_api_key" translatable="false">AIzaSyB3Sl7laD_g5c-IESwRMEAG43TDWw0zDhQ</string>
+    <string name="google_app_id" translatable="false">1:957050326572:android:6b9969b6085a2f689a8b89</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyB3Sl7laD_g5c-IESwRMEAG43TDWw0zDhQ</string>
+    <string name="google_storage_bucket" translatable="false">spotaya-97a2d.appspot.com</string>
+    <string name="project_id" translatable="false">spotaya-97a2d</string>
+</resources>
