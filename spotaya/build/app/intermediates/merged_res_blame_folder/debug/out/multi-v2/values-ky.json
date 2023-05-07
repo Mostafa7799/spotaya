@@ -4,7 +4,7 @@
             "outputFile": "com.example.spotaya.app-mergeDebugResources-14:/values-ky/values-ky.xml",
             "map": [
                 {
-                    "source": "/Users/mohamedmohamedy/.gradle/caches/transforms-3/75fcb9d3b94cbea09116f268ae351f61/transformed/jetified-play-services-basement-18.1.0/res/values-ky/values.xml",
+                    "source": "C:\\Users\\MOSTAFA MAHMOUD\\.gradle\\caches\\transforms-3\\75fcb9d3b94cbea09116f268ae351f61\\transformed\\jetified-play-services-basement-18.1.0\\res\\values-ky\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/Users/mohamedmohamedy/.gradle/caches/transforms-3/a2a6d4186090b2b9d955e2799515201a/transformed/browser-1.4.0/res/values-ky/values-ky.xml",
+                    "source": "C:\\Users\\MOSTAFA MAHMOUD\\.gradle\\caches\\transforms-3\\a2a6d4186090b2b9d955e2799515201a\\transformed\\browser-1.4.0\\res\\values-ky\\values-ky.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -38,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "/Users/mohamedmohamedy/.gradle/caches/transforms-3/e6462e04c24d31fa20570cdf4bb4e1c8/transformed/jetified-play-services-base-18.0.1/res/values-ky/values.xml",
+                    "source": "C:\\Users\\MOSTAFA MAHMOUD\\.gradle\\caches\\transforms-3\\e6462e04c24d31fa20570cdf4bb4e1c8\\transformed\\jetified-play-services-base-18.0.1\\res\\values-ky\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -55,7 +55,7 @@
                     }
                 },
                 {
-                    "source": "/Users/mohamedmohamedy/.gradle/caches/transforms-3/834a4435b41144e2f8076acb9024a891/transformed/core-1.6.0/res/values-ky/values-ky.xml",
+                    "source": "C:\\Users\\MOSTAFA MAHMOUD\\.gradle\\caches\\transforms-3\\834a4435b41144e2f8076acb9024a891\\transformed\\core-1.6.0\\res\\values-ky\\values-ky.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

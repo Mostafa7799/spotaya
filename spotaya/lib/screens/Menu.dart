@@ -5,7 +5,19 @@ import 'package:spotaya/screens/plans.dart';
 import 'package:spotaya/screens/Profile.dart';
 
 class Menu extends StatefulWidget {
-  const Menu({Key? key}) : super(key: key);
+  const Menu({
+    Key? key,
+    this.city,
+    this.longitude,
+    this.latitude,
+    this.startTime,
+    this.endTime,
+  }) : super(key: key);
+  final String? city;
+  final String? longitude;
+  final String? latitude;
+  final String? startTime;
+  final String? endTime;
 
   @override
   State<Menu> createState() => _MenuState();
