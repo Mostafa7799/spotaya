@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Sontaya',
       theme: ThemeData(
         primarySwatch: Colors.grey,
         textTheme: TextTheme(),
@@ -54,6 +54,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
+      debugShowCheckedModeBanner: false,
       home: introScreen(),
       routes: {
         'intro': (context) => introScreen(),

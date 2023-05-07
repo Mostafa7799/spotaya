@@ -1,10 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, file_names
 
 import 'package:flutter/material.dart';
-import 'package:spotaya/screens/Entertainment.dart';
-import 'package:spotaya/screens/Fitness.dart';
-import 'package:spotaya/screens/Food.dart';
-import 'package:spotaya/screens/Shopping.dart';
 import 'package:spotaya/screens/plans.dart';
 import 'package:spotaya/screens/Profile.dart';
 
@@ -45,8 +41,7 @@ class _MenuState extends State<Menu> {
       ),
       backgroundColor: Color.fromARGB(255, 40, 39, 39),
       body: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: ListView(
           children: [
             Padding(
               padding: const EdgeInsets.all(12.0),
