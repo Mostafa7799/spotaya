@@ -9,6 +9,6 @@ class GetPlacesUseCase {
   final PlacesBaseRepo _placesBaseRepo;
   const GetPlacesUseCase(this._placesBaseRepo);
 
-  Future<Either<Failure, List<Place>>> getPlaces(PlacesFilters filters) async =>
-      _placesBaseRepo.getPlaces(filters);
+  Future<Either<Failure, List<Place>>> call(PlacesFilters filters) async =>
+      await _placesBaseRepo.getPlaces(filters);
 }
