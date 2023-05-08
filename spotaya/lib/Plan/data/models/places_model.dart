@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 
 class Place extends Equatable {
-  final String name, imageUrl, location, activityDuration;
+  final String name, imageUrl, location, activityDuration, activityType;
   final List<String> types;
   const Place({
     required this.location,
@@ -9,6 +9,7 @@ class Place extends Equatable {
     required this.name,
     required this.imageUrl,
     required this.activityDuration,
+    required this.activityType,
   });
 
   factory Place.fromJson(Map<String, dynamic> json) {
@@ -20,8 +21,9 @@ class Place extends Equatable {
       location: json['location'] ?? 'none',
       types: types,
       name: json['name'] ?? 'none',
-      imageUrl: json['image'] ?? 'none',
+      imageUrl: json['photo'] ?? 'none',
       activityDuration: json['activity_duration'] ?? 'none',
+      activityType: json['activity_type'] ?? 'none',
     );
   }
 
