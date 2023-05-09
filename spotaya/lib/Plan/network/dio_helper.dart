@@ -95,7 +95,7 @@ class DioHelper implements BaseDioHelper {
       if (!isMultiPart) 'Accept': 'application/json',
       if (token != null) 'token': token,
     };
-
+    
     log('URL => ${dio.options.baseUrl + endPoint}');
     log('Header => ${dio.options.headers.toString()}');
     log('Body => $data');
@@ -129,12 +129,12 @@ extension on BaseDioHelper {
       log('Error_Type => ${e.type.toString()}');
 
       throw PrimaryServerException(
-        code: e.response?.statusCode ?? 100,
-        error: e.error.toString() ,
-        // message: e.message,
-        message: e.response!
-            .data['status_message'], // Here we change it with different APIs
-      );
+          code: e.response?.statusCode ?? 100,
+          error: e.error.toString(),
+          message: 'Something went wrong!, Please try again later'
+          // Here we change it with different APIs
+          // message: e.response!.data['status_message'],
+          );
     } catch (e) {
       PrimaryServerException exception = e as PrimaryServerException;
 
