@@ -22,14 +22,13 @@ class PlanBloc extends Bloc<PlanEvent, PlanState> {
     final result = await _getPlacesUseCase(event.filters);
 
     result.fold(
-      (failure) => PlanState(
-        getPlanState: RequestState.error,
-        getPlanMessage: failure.errorMessage,
-      ),
-      (plan) => PlanState(
-        getPlanState: RequestState.success,
-        getPlaceData: plan,
-      ),
-    );
+            (failure) => emit(state.copyWith(
+          getPlanState: RequestState.error,
+          getPlanMessage: failure.errorMessage,
+        )),
+            (plan) => emit(state.copyWith(
+          getPlanState: RequestState.success,
+          getPlaceData: plan,
+        )));
   }
 }

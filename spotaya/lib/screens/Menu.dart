@@ -116,7 +116,6 @@ class _MenuState extends State<Menu> {
                         setState(() {
                           shoppingCheck = !shoppingCheck;
                           shoppingCheck? types.add('shopping_mall'):types.remove('shopping_mall');
-                          shoppingCheck? types.add('shoe_store'):types.remove('shoe_store');
                         });
                       },
                       title: 'Shopping',
