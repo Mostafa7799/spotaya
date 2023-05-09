@@ -1,27 +1,37 @@
-const List<Map<String , dynamic>> zones = [
+const List<Map<String, dynamic>> zones = [
   {
     "city": 'Nasr City',
-    "long": '31.3301076',
-    "lat": '30.0566104',
+    "long": '31.3656',
+    "lat": '30.0511',
   },
   {
     "city": '6th of October City',
-    "long": '30.921919',
-    "lat": '29.952654',
+    "long": '30.9188',
+    "lat": '29.9285',
   },
   {
     "city": 'El-Obour City',
-    "long": '31.472268',
-    "lat": '30.22839',
+    "long": '31.4799',
+    "lat": '30.2283',
   },
   {
     "city": 'El Shorouk City',
-    "long": '31.650389',
-    "lat": '30.178217',
+    "long": '31.6285',
+    "lat": '30.1419',
   },
   {
     "city": 'New Cairo',
-    "long": '31.477898',
-    "lat": '30.005493',
+    "long": '31.4913',
+    "lat": '30.0074',
   },
+  {
+    "city": "Heliopolis",
+    "long": "31.3439",
+    "lat": "30.1123",
+  },
+  {
+    "city": "Zamalek",
+    "long": "31.2167",
+    "lat": "30.0667",
+  }
 ];
