@@ -188,6 +188,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "get_it",
+      "rootUri": "file:///Users/mohamedmohamedy/.pub-cache/hosted/pub.dev/get_it-7.5.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "http_parser",
       "rootUri": "file:///Users/mohamedmohamedy/.pub-cache/hosted/pub.dev/http_parser-4.0.2",
       "packageUri": "lib/",
@@ -332,7 +338,7 @@
       "languageVersion": "2.19"
     }
   ],
-  "generated": "2023-05-08T08:43:37.853132Z",
+  "generated": "2023-05-09T08:24:34.116782Z",
   "generator": "pub",
   "generatorVersion": "2.19.6"
 }

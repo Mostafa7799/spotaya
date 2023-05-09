@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
     return BlocProvider(
       create: (context) => di.sl<PlanBloc>(),
       child: MaterialApp(
-        title: 'Sontaya',
+        title: 'Spotaya',
         theme: ThemeData(
           primarySwatch: Colors.grey,
           textTheme: TextTheme(),

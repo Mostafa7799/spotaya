@@ -10,7 +10,7 @@ abstract class PlacesBaseDataSource {
 }
 
 class PlacesDataSource implements PlacesBaseDataSource {
-  final DioHelper _dioHelper;
+  final BaseDioHelper _dioHelper;
   PlacesDataSource(this._dioHelper);
 
   @override
