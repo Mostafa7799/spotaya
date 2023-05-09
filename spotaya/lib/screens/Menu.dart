@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:spotaya/Plan/data/models/places_filters.dart';
 import 'package:spotaya/Plan/presentation/bloc/plan_bloc.dart';
 import 'package:spotaya/Plan/presentation/screens/plan_scressn.dart';
@@ -83,7 +84,7 @@ class _MenuState extends State<Menu> {
                       onPressed: () {
                         setState(() {
                           foodCheck = !foodCheck;
-                          types.add('meal_takeaway');
+                          foodCheck ? types.add('restaurant'):types.remove('restaurant');
                         });
                       },
                       title: 'Food',
@@ -93,7 +94,7 @@ class _MenuState extends State<Menu> {
                       onPressed: () {
                         setState(() {
                           cafeCheck = !cafeCheck;
-                          types.add('cafe');
+                          cafeCheck ? types.add('cafe'):types.remove('cafe');
                         });
                       },
                       title: 'Cafe',
@@ -103,8 +104,8 @@ class _MenuState extends State<Menu> {
                       onPressed: () {
                         setState(() {
                           entertainmentCheck = !entertainmentCheck;
-                          types.add('movie_theater');
-                          types.add('park');
+                          entertainmentCheck ? types.add('movie_theater'):types.remove('movie_theater');
+                          entertainmentCheck ? types.add('park'):types.remove('park');
                         });
                       },
                       title: 'Entertainment',
@@ -114,8 +115,8 @@ class _MenuState extends State<Menu> {
                       onPressed: () {
                         setState(() {
                           shoppingCheck = !shoppingCheck;
-                          types.add('shopping_mall');
-                          types.add('shoe_store');
+                          shoppingCheck? types.add('shopping_mall'):types.remove('shopping_mall');
+                          shoppingCheck? types.add('shoe_store'):types.remove('shoe_store');
                         });
                       },
                       title: 'Shopping',
@@ -125,17 +126,17 @@ class _MenuState extends State<Menu> {
                       onPressed: () {
                         setState(() {
                           sportsCheck = !sportsCheck;
-                          types.add('stadium');
+                          sportsCheck ? types.add('book_store') :types.remove('book_store');
                         });
                       },
-                      title: 'Spots',
+                      title: 'Book Store',
                     ),
                     CustomCardWidget(
                       isChecked: fitnessCheck,
                       onPressed: () {
                         setState(() {
                           fitnessCheck = !fitnessCheck;
-                          types.add('gym');
+                          fitnessCheck ? types.add('gym'):types.remove('gym');
                         });
                       },
                       title: 'Fitness',
@@ -160,17 +161,19 @@ class _MenuState extends State<Menu> {
                     toTime: widget.endTime!,
                     types: mergedString,
                   );
-                  BlocProvider.of<PlanBloc>(context).add(
-                    GetPlanEvent(filters: placesFilter),
-                  );
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return PlanScreen();
-                      },
-                    ),
-                  );
+
+                    BlocProvider.of<PlanBloc>(context).add(
+                      GetPlanEvent(filters: placesFilter),
+                    );
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return PlanScreen();
+                        },
+                      ),
+                    );
+
                 },
                 textColor: Colors.white,
                 bgColor: Colors.black87,
