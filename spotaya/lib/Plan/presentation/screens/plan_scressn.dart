@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:spotaya/Plan/presentation/bloc/plan_bloc.dart';
 import '../../../core/const/request_state.dart';
-import '../../../core/dialog/error_dialog.dart' ;
+import '../../../core/dialog/error_dialog.dart';
 
 class PlanScreen extends StatelessWidget {
   const PlanScreen({
@@ -19,7 +19,7 @@ class PlanScreen extends StatelessWidget {
       ),
       body: BlocConsumer<PlanBloc, PlanState>(
         listenWhen: (previous, current) =>
-        previous.getPlanState != current.getPlanState,
+            previous.getPlanState != current.getPlanState,
         listener: (context, state) {
           if (state.getPlanState == RequestState.error) {
             showDialog(
@@ -31,11 +31,16 @@ class PlanScreen extends StatelessWidget {
           }
         },
         buildWhen: (previous, current) =>
-        previous.getPlaceData != current.getPlaceData,
+            previous.getPlaceData != current.getPlaceData,
         builder: (context, state) {
           if (state.getPlanState == RequestState.loading) {
             return const Center(
               child: CircularProgressIndicator(),
+            );
+          }
+          if (state.getPlanState == RequestState.error) {
+            return const Center(
+              child: Text('No Data'),
             );
           }
           var plan = state.getPlaceData;
@@ -67,7 +72,7 @@ class PlanScreen extends StatelessWidget {
                       Container(
                         width: double.infinity,
                         height: 220,
-                        padding: EdgeInsets.all(12),
+                        padding: const EdgeInsets.all(12),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),
                           image: const DecorationImage(
@@ -77,7 +82,7 @@ class PlanScreen extends StatelessWidget {
                               fit: BoxFit.fill),
                         ),
                       ),
-                      SizedBox(
+                     const SizedBox(
                         height: 10,
                       ),
                       Column(
