@@ -1,8 +1,15 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, file_names
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:spotaya/Plan/data/models/places_filters.dart';
+import 'package:spotaya/Plan/presentation/bloc/plan_bloc.dart';
+import 'package:spotaya/Plan/presentation/screens/plan_scressn.dart';
 import 'package:spotaya/screens/plans.dart';
 import 'package:spotaya/screens/Profile.dart';
+
+import '../Plan/presentation/widget/type_card_widget.dart';
+import '../originalpoint.dart';
 
 class Menu extends StatefulWidget {
   const Menu({
@@ -45,6 +52,15 @@ class _MenuState extends State<Menu> {
     });
   }
 
+  /// Check Variable
+  bool foodCheck = false;
+  bool cafeCheck = false;
+  bool entertainmentCheck = false;
+  bool shoppingCheck = false;
+  bool sportsCheck = false;
+  bool fitnessCheck = false;
+  List<String> types = [];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,247 +71,111 @@ class _MenuState extends State<Menu> {
       body: SafeArea(
         child: ListView(
           children: [
-            Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Icon(
-                    Icons.menu,
-                    color: Colors.white,
-                    size: 50.0,
-                  )
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(18.0),
-              child: Text(
-                "  Menu",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 28.0,
-                  fontWeight: FontWeight.bold,
-                ),
-                textAlign: TextAlign.start,
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Center(
+            Center(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 15.0),
                 child: Wrap(
                   spacing: 20.0,
                   runSpacing: 20.0,
                   children: [
-                    SizedBox(
-                      width: 160.0,
-                      height: 116.0,
-                      child: GestureDetector(
-                        onTap: () {
-                          Navigator.of(context).pushNamed('Food');
-                        },
-                        child: Card(
-                          color: Color.fromARGB(255, 21, 21, 21),
-                          elevation: 2.0,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          child: Center(
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Column(
-                                children: [
-                                  //Image.asset("name",width:64.0),
-                                  SizedBox(
-                                    height: 10.0,
-                                  ),
-                                  Text(
-                                    "Food",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20.0,
-                                    ),
-                                  ),
-
-                                  SizedBox(
-                                    height: 5.0,
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
+                    CustomCardWidget(
+                      isChecked: foodCheck,
+                      onPressed: () {
+                        setState(() {
+                          foodCheck = !foodCheck;
+                          types.add('meal_takeaway');
+                        });
+                      },
+                      title: 'Food',
                     ),
-                    SizedBox(
-                      width: 160.0,
-                      height: 116.0,
-                      child: GestureDetector(
-                        onTap: () {
-                          Navigator.of(context).pushNamed('Entertainment');
-                        },
-                        child: Card(
-                          color: Color.fromARGB(255, 21, 21, 21),
-                          elevation: 2.0,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          child: Center(
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Column(
-                                children: [
-                                  //Image.asset("name",width:64.0),
-                                  SizedBox(
-                                    height: 10.0,
-                                  ),
-                                  Text(
-                                    "Entertainment",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20.0,
-                                    ),
-                                  ),
-
-                                  SizedBox(
-                                    height: 5.0,
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
+                    CustomCardWidget(
+                      isChecked: cafeCheck,
+                      onPressed: () {
+                        setState(() {
+                          cafeCheck = !cafeCheck;
+                          types.add('cafe');
+                        });
+                      },
+                      title: 'Cafe',
                     ),
-                    SizedBox(
-                      width: 160.0,
-                      height: 116.0,
-                      child: GestureDetector(
-                        onTap: () {
-                          Navigator.of(context).pushNamed('Shopping');
-                        },
-                        child: Card(
-                          color: Color.fromARGB(255, 21, 21, 21),
-                          elevation: 2.0,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          child: Center(
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Column(
-                                children: [
-                                  //Image.asset("name",width:64.0),
-                                  SizedBox(
-                                    height: 10.0,
-                                  ),
-                                  Text(
-                                    "Shopping",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20.0,
-                                    ),
-                                  ),
-
-                                  SizedBox(
-                                    height: 5.0,
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
+                    CustomCardWidget(
+                      isChecked: entertainmentCheck,
+                      onPressed: () {
+                        setState(() {
+                          entertainmentCheck = !entertainmentCheck;
+                          types.add('movie_theater');
+                          types.add('park');
+                        });
+                      },
+                      title: 'Entertainment',
                     ),
-                    SizedBox(
-                      width: 160.0,
-                      height: 116.0,
-                      child: GestureDetector(
-                        onTap: () {
-                          Navigator.of(context).pushNamed('Spots');
-                        },
-                        child: Card(
-                          color: Color.fromARGB(255, 21, 21, 21),
-                          elevation: 2.0,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          child: Center(
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Column(
-                                children: [
-                                  //Image.asset("name",width:64.0),
-                                  SizedBox(
-                                    height: 10.0,
-                                  ),
-                                  Text(
-                                    "Spots",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20.0,
-                                    ),
-                                  ),
-
-                                  SizedBox(
-                                    height: 5.0,
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
+                    CustomCardWidget(
+                      isChecked: shoppingCheck,
+                      onPressed: () {
+                        setState(() {
+                          shoppingCheck = !shoppingCheck;
+                          types.add('shopping_mall');
+                          types.add('shoe_store');
+                        });
+                      },
+                      title: 'Shopping',
                     ),
-                    SizedBox(
-                      width: 160.0,
-                      height: 116.0,
-                      child: GestureDetector(
-                        onTap: () {
-                          Navigator.of(context).pushNamed('Fitness');
-                        },
-                        child: Card(
-                          color: Color.fromARGB(255, 21, 21, 21),
-                          elevation: 2.0,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          child: Center(
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Column(
-                                children: [
-                                  //Image.asset("name",width:64.0),
-                                  SizedBox(
-                                    height: 10.0,
-                                  ),
-                                  Text(
-                                    "Fitness ",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20.0,
-                                    ),
-                                  ),
-
-                                  SizedBox(
-                                    height: 5.0,
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
+                    CustomCardWidget(
+                      isChecked: sportsCheck,
+                      onPressed: () {
+                        setState(() {
+                          sportsCheck = !sportsCheck;
+                          types.add('stadium');
+                        });
+                      },
+                      title: 'Spots',
+                    ),
+                    CustomCardWidget(
+                      isChecked: fitnessCheck,
+                      onPressed: () {
+                        setState(() {
+                          fitnessCheck = !fitnessCheck;
+                          types.add('gym');
+                        });
+                      },
+                      title: 'Fitness',
                     ),
                   ],
                 ),
               ),
             ),
+            SizedBox(
+              height: 10,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: OriginalButton(
+                text: 'Generate Plan',
+                onPressed: () {
+                  String mergedString = types.join('|');
+                  PlacesFilters placesFilter = PlacesFilters(
+                    lat: widget.latitude!,
+                    log: widget.longitude!,
+                    fromTime: widget.startTime!,
+                    toTime: widget.endTime!,
+                    types: mergedString,
+                  );
+                  BlocProvider.of<PlanBloc>(context).add(
+                    GetPlanEvent(filters: placesFilter),
+                  );
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return PlanScreen();
+                      },
+                    ),
+                  );
+                },
+                textColor: Colors.white,
+                bgColor: Colors.black87,
+              ),
+            )
           ],
         ),
       ),

@@ -16,7 +16,7 @@ class PlacesDataSource implements PlacesBaseDataSource {
   @override
   Future<List<Place>> getPlacesDataSource(PlacesFilters filters) async {
     final response =
-        await _dioHelper.get(endPoint: ApiConstance.getPlacesEndPoint, query: {
+    await _dioHelper.get(endPoint: ApiConstance.getPlacesEndPoint, query: {
       'lng': filters.log,
       'lat': filters.lat,
       'types': filters.types,
@@ -25,7 +25,7 @@ class PlacesDataSource implements PlacesBaseDataSource {
     }) as Response;
 
     final places =
-        List.from(response.data).map((e) => Place.fromJson(e)).toList();
+    List.from(response.data).map((e) => Place.fromJson(e)).toList();
 
     return places;
   }

@@ -24,8 +24,11 @@ class OriginalButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(
+              25,
+            ),
+          ),
           primary: Colors.black,
         ),
         child: Text(
