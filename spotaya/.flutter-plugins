@@ -1,0 +1,21 @@
+# This is a generated file; do not edit or check into version control.
+cloud_firestore=/Users/mohamedmohamedy/.pub-cache/hosted/pub.dev/cloud_firestore-4.5.2/
+cloud_firestore_web=/Users/mohamedmohamedy/.pub-cache/hosted/pub.dev/cloud_firestore_web-3.4.2/
+firebase_auth=/Users/mohamedmohamedy/.pub-cache/hosted/pub.dev/firebase_auth-4.4.2/
+firebase_auth_web=/Users/mohamedmohamedy/.pub-cache/hosted/pub.dev/firebase_auth_web-5.3.2/
+firebase_core=/Users/mohamedmohamedy/.pub-cache/hosted/pub.dev/firebase_core-2.10.0/
+firebase_core_web=/Users/mohamedmohamedy/.pub-cache/hosted/pub.dev/firebase_core_web-2.3.0/
+fluttertoast=/Users/mohamedmohamedy/.pub-cache/hosted/pub.dev/fluttertoast-8.2.1/
+geolocator=/Users/mohamedmohamedy/.pub-cache/hosted/pub.dev/geolocator-7.7.1/
+geolocator_android=/Users/mohamedmohamedy/.pub-cache/hosted/pub.dev/geolocator_android-2.1.0/
+geolocator_apple=/Users/mohamedmohamedy/.pub-cache/hosted/pub.dev/geolocator_apple-1.2.2/
+geolocator_web=/Users/mohamedmohamedy/.pub-cache/hosted/pub.dev/geolocator_web-2.0.6/
+location=/Users/mohamedmohamedy/.pub-cache/hosted/pub.dev/location-4.4.0/
+location_web=/Users/mohamedmohamedy/.pub-cache/hosted/pub.dev/location_web-3.1.1/
+url_launcher=/Users/mohamedmohamedy/.pub-cache/hosted/pub.dev/url_launcher-6.1.11/
+url_launcher_android=/Users/mohamedmohamedy/.pub-cache/hosted/pub.dev/url_launcher_android-6.0.31/
+url_launcher_ios=/Users/mohamedmohamedy/.pub-cache/hosted/pub.dev/url_launcher_ios-6.1.4/
+url_launcher_linux=/Users/mohamedmohamedy/.pub-cache/hosted/pub.dev/url_launcher_linux-3.0.5/
+url_launcher_macos=/Users/mohamedmohamedy/.pub-cache/hosted/pub.dev/url_launcher_macos-3.0.5/
+url_launcher_web=/Users/mohamedmohamedy/.pub-cache/hosted/pub.dev/url_launcher_web-2.0.16/
+url_launcher_windows=/Users/mohamedmohamedy/.pub-cache/hosted/pub.dev/url_launcher_windows-3.0.6/
