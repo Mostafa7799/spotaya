@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 
 class Place extends Equatable {
-  final String name, imageUrl, location, activityDuration, activityType;
+  final String? name, imageUrl, location, activityDuration, activityType;
   final List<String> types;
   const Place({
     required this.location,
@@ -21,7 +21,7 @@ class Place extends Equatable {
       location: json['location'] ?? 'none',
       types: types,
       name: json['name'] ?? 'none',
-      imageUrl: json['photo'] ?? 'none',
+      imageUrl: json['photo'] ?? 'https://t4.ftcdn.net/jpg/04/99/93/31/360_F_499933117_ZAUBfv3P1HEOsZDrnkbNCt4jc3AodArl.jpg',
       activityDuration: json['activity_duration'] ?? 'none',
       activityType: json['activity_type'] ?? 'none',
     );
@@ -29,9 +29,9 @@ class Place extends Equatable {
 
   @override
   List<Object> get props => [
-        location,
+        location!,
         types,
-        name,
-        imageUrl,
+        name!,
+        imageUrl!,
       ];
 }
