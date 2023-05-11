@@ -72,86 +72,90 @@ class _MenuState extends State<Menu> {
       body: SafeArea(
         child: ListView(
           children: [
+            SizedBox(height: 45,),
             Center(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 15.0),
-                child: Wrap(
-                  spacing: 20.0,
-                  runSpacing: 20.0,
-                  children: [
-                    CustomCardWidget(
-                      isChecked: foodCheck,
-                      onPressed: () {
-                        setState(() {
-                          foodCheck = !foodCheck;
-                          foodCheck
-                              ? types.add('restaurant')
-                              : types.remove('restaurant');
-                        });
-                      },
-                      title: 'Food',
-                    ),
-                    CustomCardWidget(
-                      isChecked: cafeCheck,
-                      onPressed: () {
-                        setState(() {
-                          cafeCheck = !cafeCheck;
-                          cafeCheck ? types.add('cafe') : types.remove('cafe');
-                        });
-                      },
-                      title: 'Cafe',
-                    ),
-                    CustomCardWidget(
-                      isChecked: entertainmentCheck,
-                      onPressed: () {
-                        setState(() {
-                          entertainmentCheck = !entertainmentCheck;
-                          entertainmentCheck
-                              ? types.add('movie_theater')
-                              : types.remove('movie_theater');
-                          entertainmentCheck
-                              ? types.add('park')
-                              : types.remove('park');
-                        });
-                      },
-                      title: 'Entertainment',
-                    ),
-                    CustomCardWidget(
-                      isChecked: shoppingCheck,
-                      onPressed: () {
-                        setState(() {
-                          shoppingCheck = !shoppingCheck;
-                          shoppingCheck
-                              ? types.add('shopping_mall')
-                              : types.remove('shopping_mall');
-                        });
-                      },
-                      title: 'Shopping',
-                    ),
-                    CustomCardWidget(
-                      isChecked: sportsCheck,
-                      onPressed: () {
-                        setState(() {
-                          sportsCheck = !sportsCheck;
-                          sportsCheck
-                              ? types.add('book_store')
-                              : types.remove('book_store');
-                        });
-                      },
-                      title: 'Book Store',
-                    ),
-                    CustomCardWidget(
-                      isChecked: fitnessCheck,
-                      onPressed: () {
-                        setState(() {
-                          fitnessCheck = !fitnessCheck;
-                          fitnessCheck ? types.add('gym') : types.remove('gym');
-                        });
-                      },
-                      title: 'Fitness',
-                    ),
-                  ],
-                ),
+              child: Wrap(
+                spacing: 20.0,
+                runSpacing: 20.0,
+                children: [
+                  CustomCardWidget(
+                    icon: Icons.food_bank_outlined,
+                    isChecked: foodCheck,
+                    onPressed: () {
+                      setState(() {
+                        foodCheck = !foodCheck;
+                        foodCheck
+                            ? types.add('restaurant')
+                            : types.remove('restaurant');
+                      });
+                    },
+                    title: 'Food',
+                  ),
+                  CustomCardWidget(
+                    icon: Icons.emoji_food_beverage_outlined,
+                    isChecked: cafeCheck,
+                    onPressed: () {
+                      setState(() {
+                        cafeCheck = !cafeCheck;
+                        cafeCheck ? types.add('cafe') : types.remove('cafe');
+                      });
+                    },
+                    title: 'Cafe',
+                  ),
+                  CustomCardWidget(
+                    icon: Icons.family_restroom,
+                    isChecked: entertainmentCheck,
+                    onPressed: () {
+                      setState(() {
+                        entertainmentCheck = !entertainmentCheck;
+                        entertainmentCheck
+                            ? types.add('movie_theater')
+                            : types.remove('movie_theater');
+                        entertainmentCheck
+                            ? types.add('park')
+                            : types.remove('park');
+                      });
+                    },
+                    title: 'Entertainment',
+                  ),
+                  CustomCardWidget(
+                    icon: Icons.shopping_basket_outlined,
+                    isChecked: shoppingCheck,
+                    onPressed: () {
+                      setState(() {
+                        shoppingCheck = !shoppingCheck;
+                        shoppingCheck
+                            ? types.add('shopping_mall')
+                            : types.remove('shopping_mall');
+                      });
+                    },
+                    title: 'Shopping',
+                  ),
+                  CustomCardWidget(
+                    isChecked: sportsCheck,
+                    icon: Icons.book,
+                    onPressed: () {
+                      setState(() {
+                        sportsCheck = !sportsCheck;
+                        sportsCheck
+                            ? types.add('book_store')
+                            : types.remove('book_store');
+                      });
+                    },
+                    title: 'Book Store',
+                  ),
+                  CustomCardWidget(
+                    icon: Icons.fitness_center,
+                    isChecked: fitnessCheck,
+                    onPressed: () {
+                      setState(() {
+                        fitnessCheck = !fitnessCheck;
+                        fitnessCheck ? types.add('gym') : types.remove('gym');
+                      });
+                    },
+                    title: 'Fitness',
+                  ),
+                ],
               ),
             ),
             SizedBox(

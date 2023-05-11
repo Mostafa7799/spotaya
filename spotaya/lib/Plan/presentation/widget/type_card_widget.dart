@@ -7,10 +7,12 @@ class CustomCardWidget extends StatelessWidget {
     required this.title,
     required this.onPressed,
     this.isChecked = false,
+    required this.icon,
   }) : super(key: key);
   final String title;
   final Function onPressed;
   final bool isChecked;
+  final IconData icon;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +33,7 @@ class CustomCardWidget extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Text(
                     title,
@@ -41,6 +43,11 @@ class CustomCardWidget extends StatelessWidget {
                       fontSize: 20.0,
                     ),
                   ),
+                   Icon(
+                    icon,
+                    color: Colors.white,
+                    size: 32,
+                  )
                 ],
               ),
             ),
