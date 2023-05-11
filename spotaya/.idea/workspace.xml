@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6dabcc69-a26b-40f9-8c63-31d200d419b6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/android/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/android/local.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Plan/presentation/widget/type_card_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Plan/presentation/widget/type_card_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/Menu.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/Menu.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
-    </list>
+    <list default="true" id="6dabcc69-a26b-40f9-8c63-31d200d419b6" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
