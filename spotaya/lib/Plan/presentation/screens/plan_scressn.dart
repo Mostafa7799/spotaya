@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:spotaya/Plan/data/models/places_filters.dart';
 import 'package:spotaya/Plan/presentation/bloc/plan_bloc.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../../core/const/request_state.dart';
@@ -8,7 +9,9 @@ import '../../../core/dialog/error_dialog.dart';
 class PlanScreen extends StatelessWidget {
   const PlanScreen({
     Key? key,
+    required this.placesFilters,
   }) : super(key: key);
+  final PlacesFilters placesFilters;
 
   @override
   Widget build(BuildContext context) {
@@ -17,6 +20,21 @@ class PlanScreen extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         title: const Text('Your Plan'),
+        actions: [
+          IconButton(
+            onPressed: () {
+              BlocProvider.of<PlanBloc>(context).add(
+                GetPlanEvent(
+                  filters: placesFilters,
+                ),
+              );
+            },
+            icon: const Icon(
+              Icons.refresh_outlined,
+              size: 32,
+            ),
+          )
+        ],
       ),
       body: BlocConsumer<PlanBloc, PlanState>(
         listenWhen: (previous, current) =>

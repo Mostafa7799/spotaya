@@ -84,7 +84,9 @@ class _MenuState extends State<Menu> {
                       onPressed: () {
                         setState(() {
                           foodCheck = !foodCheck;
-                          foodCheck ? types.add('restaurant'):types.remove('restaurant');
+                          foodCheck
+                              ? types.add('restaurant')
+                              : types.remove('restaurant');
                         });
                       },
                       title: 'Food',
@@ -94,7 +96,7 @@ class _MenuState extends State<Menu> {
                       onPressed: () {
                         setState(() {
                           cafeCheck = !cafeCheck;
-                          cafeCheck ? types.add('cafe'):types.remove('cafe');
+                          cafeCheck ? types.add('cafe') : types.remove('cafe');
                         });
                       },
                       title: 'Cafe',
@@ -104,8 +106,12 @@ class _MenuState extends State<Menu> {
                       onPressed: () {
                         setState(() {
                           entertainmentCheck = !entertainmentCheck;
-                          entertainmentCheck ? types.add('movie_theater'):types.remove('movie_theater');
-                          entertainmentCheck ? types.add('park'):types.remove('park');
+                          entertainmentCheck
+                              ? types.add('movie_theater')
+                              : types.remove('movie_theater');
+                          entertainmentCheck
+                              ? types.add('park')
+                              : types.remove('park');
                         });
                       },
                       title: 'Entertainment',
@@ -115,7 +121,9 @@ class _MenuState extends State<Menu> {
                       onPressed: () {
                         setState(() {
                           shoppingCheck = !shoppingCheck;
-                          shoppingCheck? types.add('shopping_mall'):types.remove('shopping_mall');
+                          shoppingCheck
+                              ? types.add('shopping_mall')
+                              : types.remove('shopping_mall');
                         });
                       },
                       title: 'Shopping',
@@ -125,7 +133,9 @@ class _MenuState extends State<Menu> {
                       onPressed: () {
                         setState(() {
                           sportsCheck = !sportsCheck;
-                          sportsCheck ? types.add('book_store') :types.remove('book_store');
+                          sportsCheck
+                              ? types.add('book_store')
+                              : types.remove('book_store');
                         });
                       },
                       title: 'Book Store',
@@ -135,7 +145,7 @@ class _MenuState extends State<Menu> {
                       onPressed: () {
                         setState(() {
                           fitnessCheck = !fitnessCheck;
-                          fitnessCheck ? types.add('gym'):types.remove('gym');
+                          fitnessCheck ? types.add('gym') : types.remove('gym');
                         });
                       },
                       title: 'Fitness',
@@ -161,18 +171,19 @@ class _MenuState extends State<Menu> {
                     types: mergedString,
                   );
 
-                    BlocProvider.of<PlanBloc>(context).add(
-                      GetPlanEvent(filters: placesFilter),
-                    );
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return PlanScreen();
-                        },
-                      ),
-                    );
-
+                  BlocProvider.of<PlanBloc>(context).add(
+                    GetPlanEvent(filters: placesFilter),
+                  );
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return PlanScreen(
+                          placesFilters: placesFilter,
+                        );
+                      },
+                    ),
+                  );
                 },
                 textColor: Colors.white,
                 bgColor: Colors.black87,
